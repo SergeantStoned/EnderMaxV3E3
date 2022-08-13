@@ -3,7 +3,9 @@ I just wanted to share my config files for the ENDER 3 MAX with a SKR Mini E3 V3
 Feel free to use these files as you please, always at your own risk!
 
 FAN0=Part Cooling	
+
 FAN1=Hot-End			
+
 FAN2=Control-board/Mainboard
 
 Currently the firmware uses 36 probe points for auto bed leveling. I've upped the homing feedrate a bit as I'm using dual z-axis setup. 
