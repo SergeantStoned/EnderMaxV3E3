@@ -2,7 +2,9 @@ Hi!
 I just wanted to share my config files for the ENDER 3 MAX with a SKR Mini E3 V3 mainboard and a CR-Touch with z-homing.
 Feel free to use these files as you please, always at your own risk!
 
-FAN0=Part Cooling		FAN1=Hot-End			FAN2=Control-board/Mainboard
+FAN0=Part Cooling	
+FAN1=Hot-End			
+FAN2=Control-board/Mainboard
 
 Currently the firmware uses 36 probe points for auto bed leveling. I've upped the homing feedrate a bit as I'm using dual z-axis setup. 
 The original values are commented out so you can easily roll back the changes I've made or do your own adjustments.
