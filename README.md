@@ -1,7 +1,10 @@
 Hi!
 I just wanted to share my config files for the ENDER 3 MAX with a SKR Mini E3 V3 mainboard and a CR-Touch with z-homing.
-Feel free to use these files as you please, always at your own risk!
+Feel free to use these files as you please, always at your own risk! 
 
+It's highly recommended that you stay close to the PSU power switch when you try the firmware for the first time in case something unforseen happens!
+
+Please make sure that your fans are connected as shown below:
 
 FAN0=Part Cooling	
 
