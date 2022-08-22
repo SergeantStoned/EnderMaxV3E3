@@ -41,7 +41,7 @@ If you don't use the stock ENDER 3 MAX blue/white display you'll have to make ch
 
 These were the most important changes that I've made to the configuration.h so let's take a look at configuration_adv.h:
 
-POWER_LOSS_RECOVERY feature is now activated, please report if it's not properly working.
+POWER_LOSS_RECOVERY feature is once again deactivated, lol. Maybe it works in the bugfix version.
 
 I've enabled the controller fan and set the CONTROLLERFAN_SPEED_MIN to 64 so it's slowly spinning in stand by.
 Define CONTROLLER_FAN_PIN PB15 to control the mainboard(FAN2) fan.
