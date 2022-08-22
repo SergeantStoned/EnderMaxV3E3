@@ -1,19 +1,10 @@
 Hi!
 I just wanted to share my config files for the ENDER 3 MAX with a SKR Mini E3 V3 mainboard and a CR-Touch with z-homing.
-Feel free to use these files as you please, always at your own risk! 
+Feel free to use these files as you please, always at your own risk!
 
-It's highly recommended that you stay close to the PSU power switch when you try the firmware for the first time in case something unforseen happens!
+FAN0=Part Cooling		FAN1=Hot-End			FAN2=Control-board/Mainboard
 
-Please make sure that your fans are connected as shown below:
-
-FAN0=Part Cooling	
-
-FAN1=Hot-End			
-
-FAN2=Control-board/Mainboard
-
-
-Currently the firmware uses 36 probe points for auto bed leveling. I've upped the homing feedrate a bit as I'm using dual z-axis setup. 
+Now down to 25 probe points for auto bed leveling, 5x5 that is as an uneven number probes the dead center of the bed. I've upped the homing feedrate a bit as I'm using dual z-axis setup. 
 The original values are commented out so you can easily roll back the changes I've made or do your own adjustments.
 
 The serial port should work just fine so you can do a PID autotune for the hotend & bed (with pronterface for example). The process is
@@ -25,10 +16,7 @@ You might want to calibrate your e-steps aswell while you're up to it. ( https:/
 Otherwise you should change the e-steps back to crealitys standard value(93) if you're using the stock extruder.
 
 
-
-
 what I've changed in config.h:
-
 
 I've changed the DEFAULT_ACCELERATION; DEFAULT_RETRACT_ACCELERATION; DEFAULT_TRAVEL_ACCELERATION as well. The original values are commented out.
 
@@ -43,19 +31,17 @@ DON'T change the bed size! It needs to be 305 x 305 (or smaller) or otherwise it
 
 Bed tramming assistant is active. 
 
+Probe offset wizard is now activated!
+
 Z_SAFE_HOMING is enabled and the HOMING_FEEDRATE_MM_M has been slightly adjusted. 
 
 If you don't use the stock ENDER 3 MAX blue/white display you'll have to make changes in the [LCD / Controller Selection].
 (The stock ender display is referred to as CR10_STOCKDISPLAY in the config.h)
 
 
-
-
-
 These were the most important changes that I've made to the configuration.h so let's take a look at configuration_adv.h:
 
-
-I had to disable the POWER_LOSS_RECOVERY feature as it was randomly triggered when the printer was printing for about 20 minutes.
+POWER_LOSS_RECOVERY feature is now activated, please report if it's not properly working.
 
 I've enabled the controller fan and set the CONTROLLERFAN_SPEED_MIN to 64 so it's slowly spinning in stand by.
 Define CONTROLLER_FAN_PIN PB15 to control the mainboard(FAN2) fan.
@@ -79,12 +65,12 @@ You might want to disable BLTOUCH_HS_MODE (high speed mode) if you have probing 
 
 G34 or Z_STEPPER_AUTO_ALIGN can't be used to automatically align your z-steppers because the board shares a single driver for the z-axes.
 
-You could make use of XY_FREQUENCY_LIMIT ! I haven't tested this feature yet but it does sound useful for cartesian printers,
+You could make use of XY_FREQUENCY_LIMIT. I haven't tested this feature yet but it does sound useful for cartesian printers,
 especially for the Ender Max with the fairly heavy and big bed.
 
 ADAPTIVE_STEP_SMOOTHING was activated. Deactivate this feature if your prints shift layers.
 
-I've activated the PROBE_OFFSET_WIZARD in line 1292. Deactivate it, if you don't need this feature.
+I've activated the PROBE_OFFSET_WIZARD. Deactivate it, if you don't need this feature.
 
 Also the PREHEAT_SHORTCUT_MENU_ITEM was activated to have quick access to the preheating-menu.
 
